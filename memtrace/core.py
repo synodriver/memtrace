@@ -37,6 +37,7 @@ class State:
                             f"address {addr} has already been malloced at line {previous_lineno}, but line:{lineno} malloc it again"
                         )
                 self._state.append((addr, lineno))
+                break
             if m := free.match(line):
                 addr = m.group("addr")
                 index: int = 0
@@ -50,6 +51,7 @@ class State:
                         f"address {addr}  been free before malloce at line {lineno}"
                     )
                 del self._state[index]
+                break
 
     @property
     def has_leak(self):
