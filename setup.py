@@ -31,7 +31,7 @@ def main():
 
     dis = get_dis()
     setup(
-        name="memtrace",
+        name="pymemtrace",
         version=version,
         url="https://github.com/synodriver/memtrace",
         packages=packages,
