@@ -2,14 +2,16 @@
 Copyright (c) 2008-2023 synodriver <diguohuangjiajinweijun@gmail.com>
 """
 import re
-from typing import List, Pattern, Set, Tuple, Union
+from typing import List, Optional, Pattern, Set, Tuple, Union
 
 
 # r"ArchiveEntry __dealloc__ (?P<addr>\w+?),\s+?"
 class State:
     def __init__(
         self,
-        pairs: List[Tuple[Union[str, Pattern[str]], Union[str, Pattern[str]]]] = None,
+        pairs: Optional[
+            List[Tuple[Union[str, Pattern[str]], Union[str, Pattern[str]]]]
+        ] = None,
     ):
         self.pairs = []
         if pairs is not None:
