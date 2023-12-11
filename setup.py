@@ -27,11 +27,11 @@ packages = find_packages(exclude=("test", "tests.*", "test*"))
 
 
 def main():
-    version: str = get_version()
+    version: str = get_version()  # type: ignore
 
     dis = get_dis()
     setup(
-        name="pymemtrace",
+        name="python-memtrace",
         version=version,
         url="https://github.com/synodriver/memtrace",
         packages=packages,
@@ -42,7 +42,6 @@ def main():
         author="synodriver",
         author_email="diguohuangjiajinweijun@gmail.com",
         python_requires=">=3.7",
-        # install_requires=["aiohttp", "aiofiles", "typing-extensions"],
         license="GPLv3",
         classifiers=[
             "Development Status :: 3 - Alpha",
@@ -54,6 +53,7 @@ def main():
             "Programming Language :: Python :: 3.9",
             "Programming Language :: Python :: 3.10",
             "Programming Language :: Python :: 3.11",
+            "Programming Language :: Python :: 3.12",
             "Programming Language :: Python :: Implementation :: CPython",
             "Programming Language :: Python :: Implementation :: PyPy",
         ],
